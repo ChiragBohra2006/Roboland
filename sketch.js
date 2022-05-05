@@ -1191,7 +1191,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
         }
 
        
-        if(score === 100)
+        if(score === 50)
         {
           pBar.x = -1000;
           score = -1;
