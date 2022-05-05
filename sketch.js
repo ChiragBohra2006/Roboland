@@ -1035,7 +1035,7 @@ if(eg1.isTouching(laserG) || bg1.isTouching(laserG) && bg1.state ===1)
   eg1.destroyEach();
   board1.velocityY = 10;
   board1.rotation = -45;
-  pBar.x = pBar.x+2.23;
+  pBar.x = pBar.x+2.23*2;
   score = score+1;
   
 }
