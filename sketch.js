@@ -1055,7 +1055,7 @@ if(eg2.isTouching(laserG) || bg2.isTouching(laserG) && bg2.state ===1)
   eg2.destroyEach();
   board2.velocityY = 10;
   board2.rotation = -45;
-  pBar.x = pBar.x+2.23;
+  pBar.x = pBar.x+2.23*2;
   score = score+1;
   
 }
@@ -1075,7 +1075,7 @@ if(eg3.isTouching(laserG) || bg3.isTouching(laserG) && bg3.state ===1)
   eg3.destroyEach();
   board3.velocityY = 10;
   board3.rotation = -45;
-  pBar.x = pBar.x+2.23;
+  pBar.x = pBar.x+2.23*2;
   score = score+1;
   
 }
@@ -1095,7 +1095,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
   eg4.destroyEach();
   board4.velocityY = 10;
   board4.rotation = -45;
-  pBar.x = pBar.x+2.23;
+  pBar.x = pBar.x+2.23*2;
   score = score+1;
 }
     
@@ -1126,7 +1126,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board1.velocityY = 10;
          board1.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23;
+         pBar.x = pBar.x+2.23*2;
          score = score+1;
 
          
@@ -1147,7 +1147,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board2.velocityY = 10;
          board2.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23;
+         pBar.x = pBar.x+2.23*2;
          score = score+1;
         }
 
@@ -1166,7 +1166,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board3.velocityY = 10;
          board3.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23;
+         pBar.x = pBar.x+2.23*2;
          score = score+1;
         }
 
@@ -1186,7 +1186,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board4.velocityY = 10;
          board4.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23;
+         pBar.x = pBar.x+2.23*2;
          score = score+1;
         }
 
