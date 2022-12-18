@@ -71,6 +71,7 @@ var eg1, eg2, eg3, eg4, bg1, bg2, bg3, bg4, hg1, hg2, hg3, hg4, eh1, eh2, eh3, e
 var wallG, wallG2;
 var htPlay, htPlay2, htPlayI, htPlayI2;
 var back, backI;
+var downA, upA, shootB, chargeB, laserB;
 
 
 function preload(){
@@ -133,7 +134,7 @@ function preload(){
 
     healthBarImage = loadImage("hb.png");
   
-    batteryBarImage = loadImage("BatteryBar.png");
+    batteryBarImage = loadImage("batteryBar.png");
 
     rhealthImage = loadImage("health.png");
 
@@ -262,7 +263,7 @@ function setup(){
     
     canvas = createCanvas(1366, 656);
 
-    missionAccomplished = createSprite(-11656, 328)
+    missionAccomplished = createSprite(-11656, 328);
     missionAccomplished.addImage("missionAccomplished", missionAccomplishedI);
 
     missionFailed = createSprite(11656, 328)
@@ -303,7 +304,7 @@ function setup(){
     sky.scale = 1.54;
 
    
-
+    
     
     animation = createSprite(width/2+2700, -2000);
    
@@ -469,7 +470,8 @@ function setup(){
     ground = createSprite(652, 550, 1366, 5);
     ground.visible = false;
   
- 
+    //upA = createSprite(100, 600);
+   // laserB = createSprite(1100, 600);
     
 
     eg1 = new Group();
@@ -529,6 +531,8 @@ function setup(){
     camera.y = 1000;
     camera.x = -2000;
 
+    
+
 
 }
 
@@ -555,6 +559,8 @@ if(gameStart.x === 500)
   countDown.play();
 }
 
+
+
 if(animation.x < -6000)
 {
  
@@ -568,23 +574,25 @@ if(animation.x < -6000)
 }
 
 
-if(mouseIsOver(htPlay) && mouseWentDown("left"))
+if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIOver(htPlay) && touches.length>0)
     {
       camera.x = 10000;
+       touches = [];
 
     }
     
 
-       if(mouseIsOver(back) && mouseWentDown("left"))
+       if(mouseIsOver(back) && mouseWentDown("left")|| mouseIOver(back) && touches.length>0)
        {
        camera.x = -2000;
+	touches = [];
        }
     
 
-    if(mousePressedOver(play)|| touches.length>0)
+    if(mousePressedOver(play) || mouseIOver(play) && touches.length>0)
     {
-       touches = []; 
-       music.play();
+	
+        music.play();
         music.setLoop(true);
         camera.y = -2000;
         camera.x = -550;
@@ -599,6 +607,7 @@ if(mouseIsOver(htPlay) && mouseWentDown("left"))
         a4.lifetime = 340;
         a5.lifetime = 425;
         a6.lifetime = 510;
+        touches = [];
     }
     
   
@@ -631,8 +640,9 @@ if(mouseIsOver(htPlay) && mouseWentDown("left"))
     textFont("Broadway");
     text(robot.health, 105, 55);
 
-if(keyWentDown("space") && laserState === true)
+if(keyWentDown("space") && laserState === true || mouseIsOver(laserB) && touches.length>0)
 {
+  touches = [];
   laser = createSprite(135, 485);
   laserScore2 = laserScore2 +1;
   laser.y = robot.y-18;
@@ -662,8 +672,10 @@ if(keyDown("w"))
 }
 
 
-if(mouseDown("left") && camera.x === 656)
+if(mouseDown("left") && camera.x === 656 || mouseIOver(shootB) && touches.length>0 && camera.x === 656)
 {
+
+  touches = [];
   if(frameCount%2===0)
     {
     bulletS.play();
@@ -1035,7 +1047,7 @@ if(eg1.isTouching(laserG) || bg1.isTouching(laserG) && bg1.state ===1)
   eg1.destroyEach();
   board1.velocityY = 10;
   board1.rotation = -45;
-  pBar.x = pBar.x+2.23*2;
+  pBar.x = pBar.x+2.23;
   score = score+1;
   
 }
@@ -1055,7 +1067,7 @@ if(eg2.isTouching(laserG) || bg2.isTouching(laserG) && bg2.state ===1)
   eg2.destroyEach();
   board2.velocityY = 10;
   board2.rotation = -45;
-  pBar.x = pBar.x+2.23*2;
+  pBar.x = pBar.x+2.23;
   score = score+1;
   
 }
@@ -1075,7 +1087,7 @@ if(eg3.isTouching(laserG) || bg3.isTouching(laserG) && bg3.state ===1)
   eg3.destroyEach();
   board3.velocityY = 10;
   board3.rotation = -45;
-  pBar.x = pBar.x+2.23*2;
+  pBar.x = pBar.x+2.23;
   score = score+1;
   
 }
@@ -1095,7 +1107,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
   eg4.destroyEach();
   board4.velocityY = 10;
   board4.rotation = -45;
-  pBar.x = pBar.x+2.23*2;
+  pBar.x = pBar.x+2.23;
   score = score+1;
 }
     
@@ -1126,7 +1138,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board1.velocityY = 10;
          board1.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23*2;
+         pBar.x = pBar.x+2.23;
          score = score+1;
 
          
@@ -1147,7 +1159,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board2.velocityY = 10;
          board2.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23*2;
+         pBar.x = pBar.x+2.23;
          score = score+1;
         }
 
@@ -1166,7 +1178,7 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board3.velocityY = 10;
          board3.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23*2;
+         pBar.x = pBar.x+2.23;
          score = score+1;
         }
 
@@ -1186,12 +1198,12 @@ if(eg4.isTouching(laserG) || bg4.isTouching(laserG) && bg4.state ===1)
          board4.velocityY = 10;
          board4.rotation = -45;
          laserScore = laserScore+1;
-         pBar.x = pBar.x+2.23*2;
+         pBar.x = pBar.x+2.23;
          score = score+1;
         }
 
        
-        if(score === 50)
+        if(score === 100)
         {
           pBar.x = -1000;
           score = -1;
