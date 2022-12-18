@@ -568,10 +568,10 @@ if(animation.x < -6000)
 }
 
 
-if(mouseIsOver(htPlay) && mouseWentDown("left"))
+if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIsOver(htPlay) && touches.lenth>0)
     {
       camera.x = 10000;
-       
+      touches = [];
 
     }
     
