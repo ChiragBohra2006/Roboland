@@ -568,10 +568,9 @@ if(animation.x < -6000)
 }
 
 
-if(mouseIsOver(htPlay) && mouseWentDown("left") || touches.length>0)
+if(mouseIsOver(htPlay) && mouseWentDown("left"))
     {
       camera.x = 10000;
-      touches = [];
 
     }
     
@@ -582,9 +581,10 @@ if(mouseIsOver(htPlay) && mouseWentDown("left") || touches.length>0)
        }
     
 
-    if(mousePressedOver(play))
+    if(mousePressedOver(play)|| touches.length>0)
     {
-        music.play();
+       touches = []; 
+       music.play();
         music.setLoop(true);
         camera.y = -2000;
         camera.x = -550;
