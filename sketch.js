@@ -531,8 +531,6 @@ function setup(){
     camera.y = 1000;
     camera.x = -2000;
 
-    
-
 
 }
 
