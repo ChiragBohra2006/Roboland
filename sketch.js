@@ -585,7 +585,7 @@ if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIsOver(htPlay) && touche
        }
     
 
-    if(mousePressedOver(play) || mouseIOver(play) && touches.length>0)
+    if(mousePressedOver(play) || mouseIsOver(play) && touches.length>0)
     {
 	
         music.play();
@@ -668,7 +668,7 @@ if(keyDown("w"))
 }
 
 
-if(mouseDown("left") && camera.x === 656 || mouseIOver(shootB) && touches.length>0 && camera.x === 656)
+if(mouseDown("left") && camera.x === 656 || mouseIsOver(shootB) && touches.length>0 && camera.x === 656)
 {
 
   touches = [];
