@@ -570,7 +570,7 @@ if(animation.x < -6000)
 }
 
 
-if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIOver(htPlay) && touches.length>0)
+if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIsOver(htPlay) && touches.length>0)
     {
       camera.x = 10000;
        touches = [];
@@ -578,7 +578,7 @@ if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIOver(htPlay) && touches
     }
     
 
-       if(mouseIsOver(back) && mouseWentDown("left")|| mouseIOver(back) && touches.length>0)
+       if(mouseIsOver(back) && mouseWentDown("left")|| mouseIsOver(back) && touches.length>0)
        {
        camera.x = -2000;
 	touches = [];
