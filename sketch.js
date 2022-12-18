@@ -567,7 +567,7 @@ if(animation.x < -6000)
   animation.destroy();
 }
 
-htplay.visible = false;
+
 if(mouseIsOver(htPlay) && mouseWentDown("left") || mouseIsOver(htPlay) && touches.length>0)
     {
       camera.x = 10000;
