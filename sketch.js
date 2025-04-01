@@ -561,7 +561,7 @@ if(animation.x < -6000)
 {
  
   animation.x = 6000;
-  sky.velocityX = 8;
+  sky.velocityX = -8;
   gameState = PLAY;
   frameCount = 0;
   enemyBall.velocityX = -4;
