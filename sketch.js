@@ -134,7 +134,7 @@ function preload(){
 
     healthBarImage = loadImage("hb.png");
   
-    batteryBarImage = loadImage("batteryBar.png");
+    batteryBarImage = loadImage("BatteryBar.png");
 
     rhealthImage = loadImage("health.png");
 
